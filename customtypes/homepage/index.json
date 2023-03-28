@@ -1,0 +1,322 @@
+{
+  "id": "homepage",
+  "label": "Homepage",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Hero": {
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading1"
+        }
+      },
+      "strapline": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Strapline",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph"
+        }
+      },
+      "button_text": {
+        "type": "Text",
+        "config": {
+          "label": "Button Text",
+          "placeholder": ""
+        }
+      },
+      "button_destination": {
+        "type": "Text",
+        "config": {
+          "label": "Button Destination",
+          "placeholder": ""
+        }
+      },
+      "hero_image": {
+        "type": "Image",
+        "config": {
+          "label": "Background Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    },
+    "Services": {
+      "services": {
+        "type": "Group",
+        "config": {
+          "label": "Services",
+          "fields": {
+            "name": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Name",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "single": "heading2"
+              }
+            },
+            "description": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Description",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "single": "paragraph"
+              }
+            }
+          }
+        }
+      }
+    },
+    "About": {
+      "about_heading": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Heading",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading2"
+        }
+      },
+      "about_text": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Text",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "qualities": {
+        "type": "Group",
+        "config": {
+          "label": "Qualities",
+          "fields": {
+            "heading": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Heading",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "single": "heading3"
+              }
+            },
+            "description": {
+              "type": "Text",
+              "config": {
+                "label": "Description",
+                "placeholder": ""
+              }
+            },
+            "icon": {
+              "type": "Image",
+              "config": {
+                "label": "Icon",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      },
+      "about_image": {
+        "type": "Image",
+        "config": {
+          "label": "Background Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    },
+    "Gallery": {
+      "gallery_heading": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Heading",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading2"
+        }
+      },
+      "gallery_description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph"
+        }
+      },
+      "gallery": {
+        "type": "Group",
+        "config": {
+          "label": "Gallery",
+          "fields": {
+            "image": {
+              "type": "Image",
+              "config": {
+                "label": "Image",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      }
+    },
+    "Testimonials": {
+      "testimonials_heading": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Heading",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading2"
+        }
+      },
+      "testimonials_description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "paragraph"
+        }
+      },
+      "testimonials": {
+        "type": "Group",
+        "config": {
+          "label": "Testimonials",
+          "fields": {
+            "star_rating": {
+              "type": "Number",
+              "config": {
+                "label": "Star Rating",
+                "placeholder": ""
+              }
+            },
+            "comment": {
+              "type": "StructuredText",
+              "config": {
+                "label": "Comment",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "multi": "paragraph"
+              }
+            },
+            "customer_name": {
+              "type": "Text",
+              "config": {
+                "label": "Customer Name",
+                "placeholder": ""
+              }
+            },
+            "additional_info": {
+              "type": "Text",
+              "config": {
+                "label": "Additional Info",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    },
+    "Contact": {
+      "contact_heading": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Heading",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading2"
+        }
+      },
+      "contact_description": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Description",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph"
+        }
+      },
+      "phone_number": {
+        "type": "Text",
+        "config": {
+          "label": "Phone Number",
+          "placeholder": ""
+        }
+      },
+      "email": {
+        "type": "Text",
+        "config": {
+          "label": "email",
+          "placeholder": ""
+        }
+      },
+      "address": {
+        "type": "Group",
+        "config": {
+          "label": "Address",
+          "fields": {
+            "address_line": {
+              "type": "Text",
+              "config": {
+                "label": "Address Line",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      },
+      "social_media_heading": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Social Media Heading",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading3"
+        }
+      },
+      "social_media_links": {
+        "type": "Group",
+        "config": {
+          "label": "Social Media Links",
+          "fields": {
+            "link": {
+              "type": "Link",
+              "config": {
+                "label": "Link",
+                "placeholder": "",
+                "select": null
+              }
+            },
+            "icon": {
+              "type": "Image",
+              "config": {
+                "label": "Icon",
+                "constraint": {},
+                "thumbnails": []
+              }
+            }
+          }
+        }
+      },
+      "contact_image": {
+        "type": "Image",
+        "config": {
+          "label": "Background Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "id": "header",
+  "label": "Header",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "logo": {
+        "type": "Image",
+        "config": {
+          "label": "Logo",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "phone_number": {
+        "type": "Text",
+        "config": {
+          "label": "Phone Number",
+          "placeholder": ""
+        }
+      },
+      "navigation": {
+        "type": "Group",
+        "config": {
+          "label": "Navigation",
+          "fields": {
+            "link_text": {
+              "type": "Text",
+              "config": {
+                "label": "Link Text",
+                "placeholder": ""
+              }
+            },
+            "link_destination": {
+              "type": "Text",
+              "config": {
+                "label": "Link Destination",
+                "placeholder": ""
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

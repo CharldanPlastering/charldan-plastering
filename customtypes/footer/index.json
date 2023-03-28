@@ -1,0 +1,17 @@
+{
+  "id": "footer",
+  "label": "Footer",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "copyright_business_name": {
+        "type": "Text",
+        "config": {
+          "label": "Copyright Business Name",
+          "placeholder": ""
+        }
+      }
+    }
+  }
+}
