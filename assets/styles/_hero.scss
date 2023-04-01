@@ -1,0 +1,45 @@
+.section--hero {
+  padding: 6rem 5rem;
+  background-color: $clr-accent-pale;
+  position: relative;
+  isolation: isolate;
+}
+
+.hero__image {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 65%;
+  min-width: 35rem;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero__box {
+  background-color: $clr-white;
+  border: 8px solid $clr-primary;
+  padding: 2rem 2.5rem;
+  max-width: 48rem;
+  box-shadow: $shadow-subtle;
+
+  > * + * {
+    margin-top: 1rem;
+  }
+}
+
+.hero__title {
+  font-size: 2.5rem;
+
+  h1 {
+    margin: 0;
+  }
+}
+
+.hero__strapline {
+  font-size: 1.4rem;
+
+  p {
+    margin: 0;
+  }
+}

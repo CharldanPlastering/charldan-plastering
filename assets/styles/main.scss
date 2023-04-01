@@ -1,6 +1,8 @@
 @import './mixins.scss';
 @import './variables.scss';
 
+@import '@/assets/styles/hero.scss';
+
 *,
 *::before,
 *::after {
@@ -34,5 +36,17 @@ h5,
 h6 {
   line-height: 1.1;
   font-family: $font-display;
-  font-weight: 600;
+  font-weight: 400;
+}
+
+.button {
+  display: block;
+  width: fit-content;
+  padding: .5rem 1.25rem;
+  font-family: $font-display;
+  background-color: $clr-accent;
+  color: $clr-white;
+  border-radius: 4px;
+  font-size: 1.25rem;
+  text-decoration: none;
 }

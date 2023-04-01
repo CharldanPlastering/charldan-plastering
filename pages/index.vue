@@ -1,16 +1,19 @@
 <template>
   <main>
     <section class="section section--hero">
-      <prismic-rich-text class="hero__title" :field="document.data.title" />
-      <prismic-rich-text
-        class="hero__strapline"
-        :field="document.data.strapline"
-      />
-      <a
-        class="button hero__call-to-action"
-        :href="document.data.button_destination"
-        >{{ document.data.button_text }}</a
-      >
+      <prismic-image class="hero__image" :field="document.data.hero_image"></prismic-image>
+      <div class="hero__box">
+        <prismic-rich-text class="hero__title" :field="document.data.title" />
+        <prismic-rich-text
+          class="hero__strapline"
+          :field="document.data.strapline"
+        />
+        <a
+          class="button hero__call-to-action"
+          :href="document.data.button_destination"
+          >{{ document.data.button_text }}</a
+        >
+      </div>
     </section>
   </main>
 </template>
