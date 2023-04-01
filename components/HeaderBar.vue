@@ -1,6 +1,5 @@
 <template>
   <header>
-    <prismic-image class="logo" :field="$store.state.header.logo" />
     <button
       aria-label="Menu"
       for="menu-toggle"
@@ -18,23 +17,23 @@
         />
       </svg>
     </button>
-    <nav v-if="$store.state.header.menu" aria-label="primary navigation" :class="{ open: showMenu }">
+    <prismic-image class="logo" :field="$store.state.header.logo" />
+    <nav v-if="$store.state.header.navigation" aria-label="primary navigation" :class="{ open: showMenu }">
       <ul>
-        <li v-for="link in $store.state.header.menu" :key="link.link_text" @click="closeMenu">
-          <a
-            :href="`/${link.link_destination}`"
-            >{{ link.link_name }}</a
-          >
+        <li v-for="link in $store.state.header.navigation" :key="link.link_text" @click="closeMenu">
+          <a :href="`/${link.link_destination}`">{{ link.link_text }}</a>
         </li>
       </ul>
     </nav>
+    <a class="header__phone-link" :href="`tel:${$store.state.header.phone_number}`">
+      <img src="~/assets/images/phone-white.svg" alt="" />
+      <span>{{ $store.state.header.phone_number }}</span></a>
   </header>
 </template>
 
 <script>
 export default {
   name: 'HeaderBar',
-  props: ['menu'],
   data() {
     return {
       showMenu: false,
@@ -55,27 +54,43 @@ export default {
 @import '@/assets/styles/variables.scss';
 
 header {
-  --header-spacing: 2rem;
+  --header-spacing-outer: 1rem 5rem;
+  --nav-spacing: 2rem;
+
+  @media screen and (max-width: 1200px) {
+    --header-spacing-outer: 1rem 2rem;
+  }
+
+  @media screen and (max-width: 1000px) {
+    --nav-spacing: 1.5rem;
+
+    li + li::before {
+      content: none;
+    }
+  }
+
+  @media screen and (max-width: 900px) {
+    --nav-spacing: 1.25rem;
+  }
 
   position: sticky;
   top: 0;
-  height: var(--header-height);
+  height: $header-height;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  padding: 1rem var(--header-spacing);
+  padding: var(--header-spacing-outer);
   width: 100%;
   z-index: 10;
   background-color: $clr-primary;
-  filter: drop-shadow(var(--shadow-subtle));
-  color: var(--clr-white);
+  filter: drop-shadow($shadow-subtle);
+  color: $clr-white;
+  font-size: 1.25rem;
 }
 
 .logo {
   height: 100%;
   width: auto;
-  max-height: 10vw;
-  min-height: 3rem;
-  filter: drop-shadow(var(--shadow-dark));
 }
 
 .menu-toggle-button,
@@ -83,36 +98,67 @@ header {
   display: none;
 }
 
-nav {
-  font-size: 1rem;
-  font-weight: 300;
-}
-
 ul {
   list-style: none;
   display: flex;
   padding: 0;
+  margin: 0 var(--nav-spacing);
 }
 
 li {
-  margin: 0 0 0 1.5rem;
+  margin: 0 calc(var(--nav-spacing) / 2);
+  white-space: nowrap;
+
+  a {
+    text-decoration: none;
+  }
+
+  + li {
+    &::before {
+      content: "";
+      display: inline-block;
+      background-image: url(~/assets/images/three-dots-white.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 4px;
+      height: 12px;
+      margin-right: var(--nav-spacing);
+    }
+  }
 }
 
 a {
   color: inherit;
-  text-decoration: none;
+}
+
+.header__phone-link {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  white-space: nowrap;
+
+  img {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  span {
+    margin-left: .5rem;
+  }
 }
 
 @media screen and (max-width: 800px) {
   header {
-    // justify-content: space-between;
     align-items: center;
+    padding: 1rem 2rem;
   }
 
   .menu-toggle-button {
     display: flex;
     cursor: pointer;
     border: 0;
+    padding: 0;
     background: none;
     color: inherit;
   }
@@ -155,14 +201,15 @@ a {
     padding: 1rem;
   }
 
-  a {
-    color: inherit;
-  }
-}
+  .header__phone-link {
+    img {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
 
-@media screen and (max-width: 500px) {
-  header {
-    --header-spacing: 1rem;
+    span {
+      display: none;
+    }
   }
 }
 </style>

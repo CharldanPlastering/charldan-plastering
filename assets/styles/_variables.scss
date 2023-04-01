@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Alata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alata&family=Source+Sans+3:wght@400;600&display=swap');
 
 $clr-primary: #e12301;
 $clr-primary-dark: #681000;
@@ -11,3 +10,7 @@ $clr-white: #fff;
 
 $font-display: 'Alata', sans-serif;
 $font-body: 'Source Sans 3', sans-serif;
+
+$header-height: 5rem;
+
+$shadow-subtle: 0px 0px 16px #0000001a;
