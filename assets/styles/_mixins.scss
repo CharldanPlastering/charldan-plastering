@@ -1,0 +1,17 @@
+@mixin font-size-clamp($min, $ideal, $max) {
+    @supports (font-size: clamp($min, $ideal, $max)) {
+        font-size: clamp($min, $ideal, $max);
+    }
+
+    @supports not (font-size: clamp($min, $ideal, $max)) {
+        font-size: calc(($min + $max) / 2);
+
+        @media screen and (max-width:500px) {
+            font-size: $min;
+        }
+
+        @media screen and (min-width:700px) {
+            font-size: $max;
+        }
+    }
+}
