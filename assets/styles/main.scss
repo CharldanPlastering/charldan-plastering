@@ -4,6 +4,8 @@
 @import '@/assets/styles/hero.scss';
 @import '@/assets/styles/services.scss';
 @import '@/assets/styles/about.scss';
+@import '@/assets/styles/gallery.scss';
+@import '@/assets/styles/testimonials.scss';
 
 *,
 *::before,
@@ -71,4 +73,12 @@ h6 {
   border-radius: 4px;
   font-size: 1.25rem;
   text-decoration: none;
+}
+
+.section__description {
+  margin-top: .25rem;
+
+  > :only-child {
+    margin: 0;
+  }
 }

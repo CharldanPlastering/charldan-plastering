@@ -37,6 +37,16 @@
         </div>
       </div>
     </section>
+
+    <section class="section section--gallery">
+      <prismic-rich-text class="gallery__heading heading" :field="document.data.gallery_heading"></prismic-rich-text>
+        <prismic-rich-text class="gallery__text section__description" :field="document.data.gallery_description"></prismic-rich-text>
+    </section>
+
+    <section class="section section--testimonials">
+      <prismic-rich-text class="testimonials__heading heading" :field="document.data.testimonials_heading"></prismic-rich-text>
+        <prismic-rich-text class="testimonials__text section__description" :field="document.data.testimonials_description"></prismic-rich-text>
+    </section>
   </main>
 </template>
 
