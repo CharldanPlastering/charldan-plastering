@@ -1,0 +1,79 @@
+$divider-width: 8px;
+
+.section--services {
+  --service-gap: 2.5rem;
+
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.service {
+  padding: 2rem;
+  text-align: center;
+  width: 0;
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 30rem;
+
+  & + & {
+    margin-left: var(--service-gap);
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: calc(-1 / 2 * (var(--service-gap) + #{$divider-width}));
+      top: 50%;
+      transform: translateY(-50%);
+      background-image: url(~/assets/images/three-dots-accent.svg);
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: $divider-width;
+      height: 100%;
+    }
+  }
+}
+
+.service__heading {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+
+  > :only-child {
+    margin: 0;
+  }
+}
+
+.service__description {
+  font-size: 1.125rem;
+
+  > :only-child {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .section--services {
+    --service-gap: 0;
+    flex-wrap: wrap;
+  }
+
+  .service {
+    min-width: 20rem;
+
+    & + & {
+      &::before {
+        content: none;
+      }
+    }
+  }
+}
+
+
+@media screen and (max-width: 700px) {
+  .service {
+    max-width: 100%;
+    text-align: left;
+  }
+}

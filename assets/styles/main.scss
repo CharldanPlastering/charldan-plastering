@@ -2,11 +2,13 @@
 @import './variables.scss';
 
 @import '@/assets/styles/hero.scss';
+@import '@/assets/styles/services.scss';
 
 *,
 *::before,
 *::after {
   box-sizing: border-box;
+  font-size: inherit;
 }
 
 html {

@@ -15,6 +15,13 @@
         >
       </div>
     </section>
+
+    <section class="section section--services">
+      <div v-for="(service, i) in document.data.services" :key="`service-${i}`" class="service">
+        <prismic-rich-text class="service__heading" :field="service.name"></prismic-rich-text>
+        <prismic-rich-text class="service__description" :field="service.description"></prismic-rich-text>
+      </div>
+    </section>
   </main>
 </template>
 
