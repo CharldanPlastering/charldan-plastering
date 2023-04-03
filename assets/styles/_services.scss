@@ -6,6 +6,9 @@ $divider-width: 8px;
   display: flex;
   justify-content: center;
   padding: 2rem;
+  box-shadow: $shadow-subtle;
+  position: relative;
+  z-index: 1;
 }
 
 .service {
@@ -37,12 +40,7 @@ $divider-width: 8px;
 }
 
 .service__heading {
-  font-size: 2rem;
   margin-bottom: 2rem;
-
-  > :only-child {
-    margin: 0;
-  }
 }
 
 .service__description {

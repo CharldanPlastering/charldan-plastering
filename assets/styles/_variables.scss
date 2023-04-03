@@ -8,9 +8,11 @@ $clr-grey: #262626;
 $clr-black: #2c0903;
 $clr-white: #fff;
 
+$filter-accent: invert(55%) sepia(31%) saturate(1118%) hue-rotate(103deg) brightness(105%) contrast(91%);
+
 $font-display: 'Alata', sans-serif;
 $font-body: 'Source Sans 3', sans-serif;
 
 $header-height: 5rem;
 
-$shadow-subtle: 0px 0px 16px #0000001a;
+$shadow-subtle: 0px 0px 16px rgba(0, 0, 0, 0.1);

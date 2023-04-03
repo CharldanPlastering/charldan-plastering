@@ -2,7 +2,7 @@
   <main>
     <section class="section section--hero">
       <prismic-image class="hero__image" :field="document.data.hero_image"></prismic-image>
-      <div class="hero__box">
+      <div class="hero__box box">
         <prismic-rich-text class="hero__title" :field="document.data.title" />
         <prismic-rich-text
           class="hero__strapline"
@@ -18,8 +18,23 @@
 
     <section class="section section--services">
       <div v-for="(service, i) in document.data.services" :key="`service-${i}`" class="service">
-        <prismic-rich-text class="service__heading" :field="service.name"></prismic-rich-text>
+        <prismic-rich-text class="service__heading heading" :field="service.name"></prismic-rich-text>
         <prismic-rich-text class="service__description" :field="service.description"></prismic-rich-text>
+      </div>
+    </section>
+
+    <section class="section section--about">
+      <prismic-image class="about__image" :field="document.data.about_image"></prismic-image>
+      <div class="about__box box">
+        <prismic-rich-text class="about__heading heading" :field="document.data.about_heading"></prismic-rich-text>
+        <prismic-rich-text class="about__text" :field="document.data.about_text"></prismic-rich-text>
+        <div class="about__qualities">
+          <div v-for="(quality, i) in document.data.qualities" :key="`quality-${i}`" class="quality">
+            <prismic-image :field="quality.icon" class="quality__icon"></prismic-image>
+            <prismic-rich-text :field="quality.heading" class="quality__heading heading"></prismic-rich-text>
+            <p class="quality__description">{{ quality.description }}</p>
+          </div>
+        </div>
       </div>
     </section>
   </main>

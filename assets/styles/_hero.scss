@@ -17,15 +17,7 @@
 }
 
 .hero__box {
-  background-color: $clr-white;
-  border: 8px solid $clr-primary;
-  padding: 2rem 2.5rem;
   max-width: 48rem;
-  box-shadow: $shadow-subtle;
-
-  > * + * {
-    margin-top: 1rem;
-  }
 }
 
 .hero__title {

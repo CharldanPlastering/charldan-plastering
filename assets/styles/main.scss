@@ -3,6 +3,7 @@
 
 @import '@/assets/styles/hero.scss';
 @import '@/assets/styles/services.scss';
+@import '@/assets/styles/about.scss';
 
 *,
 *::before,
@@ -39,6 +40,25 @@ h6 {
   line-height: 1.1;
   font-family: $font-display;
   font-weight: 400;
+}
+
+.box {
+    background-color: $clr-white;
+    border: 8px solid $clr-primary;
+    padding: 2rem 2.5rem;
+    box-shadow: $shadow-subtle;
+
+    > * + * {
+      margin-top: var(--box-spacing, 1rem);
+    }
+}
+
+.heading {
+  font-size: 2rem;
+
+  > :only-child {
+    margin: 0;
+  }
 }
 
 .button {
