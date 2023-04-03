@@ -40,12 +40,46 @@
 
     <section class="section section--gallery">
       <prismic-rich-text class="gallery__heading heading" :field="document.data.gallery_heading"></prismic-rich-text>
-        <prismic-rich-text class="gallery__text section__description" :field="document.data.gallery_description"></prismic-rich-text>
+      <prismic-rich-text class="gallery__text section__description" :field="document.data.gallery_description"></prismic-rich-text>
     </section>
 
     <section class="section section--testimonials">
       <prismic-rich-text class="testimonials__heading heading" :field="document.data.testimonials_heading"></prismic-rich-text>
-        <prismic-rich-text class="testimonials__text section__description" :field="document.data.testimonials_description"></prismic-rich-text>
+      <prismic-rich-text class="testimonials__text section__description" :field="document.data.testimonials_description"></prismic-rich-text>
+    </section>
+
+    <section class="section section--contact">
+      <prismic-image class="contact__image" :field="document.data.contact_image"></prismic-image>
+      <div class="contact__box box">
+        <div>
+          <prismic-rich-text class="contact__heading heading" :field="document.data.contact_heading"></prismic-rich-text>
+          <prismic-rich-text class="contact__description" :field="document.data.contact_description"></prismic-rich-text>
+        </div>
+        <div class="contact__details">
+          <div class="contact__detail">
+            <img class="detail__icon" src="~/assets/images/phone-accent.svg" alt="Phone" />
+            <a class="detail__value" :href="`tel:${document.data.phone_number}`">{{ document.data.phone_number }}</a>
+          </div>
+          <div class="contact__detail">
+            <img class="detail__icon" src="~/assets/images/email-accent.svg" alt="Phone" />
+            <a class="detail__value" :href="`mailto:${document.data.email}`">{{ document.data.email }}</a>
+          </div>
+          <div class="contact__detail">
+            <img class="detail__icon" src="~/assets/images/location-accent.svg" alt="Phone" />
+            <address class="detail__value detail__value--address">
+              <div v-for="(line, i) in document.data.address" :key="`address-line-${i}`">{{ line.address_line }}</div>
+            </address>
+          </div>
+        </div>
+        <div class="social-media">
+          <prismic-rich-text class="social-media__heading" :field="document.data.social_media_heading"></prismic-rich-text>
+          <div class="social-media__links">
+            <prismic-link v-for="(link, i) in document.data.social_media_links" :key="`social-link-${i}`" :field="link.link">
+              <prismic-image :field="link.icon"></prismic-image>
+            </prismic-link>
+          </div>
+        </div>
+      </div>
     </section>
   </main>
 </template>
