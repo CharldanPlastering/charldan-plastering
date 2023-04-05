@@ -3,19 +3,10 @@
     <button
       aria-label="Menu"
       for="menu-toggle"
-      class="menu-toggle-button"
+      class="menu-toggle-button header__button"
       @click="toggleMenu"
     >
-      <svg
-        class="menu-icon"
-        viewBox="0 0 122.88 95.95"
-        style="stroke: currentColor; fill: currentColor"
-      >
-        <path
-          style="fill-rule: evenodd; clip-rule: evenodd"
-          d="M8.94,0h105c4.92,0,8.94,4.02,8.94,8.94l0,0c0,4.92-4.02,8.94-8.94,8.94h-105C4.02,17.88,0,13.86,0,8.94l0,0 C0,4.02,4.02,0,8.94,0L8.94,0z M8.94,78.07h105c4.92,0,8.94,4.02,8.94,8.94l0,0c0,4.92-4.02,8.94-8.94,8.94h-105 C4.02,95.95,0,91.93,0,87.01l0,0C0,82.09,4.02,78.07,8.94,78.07L8.94,78.07z M8.94,39.03h105c4.92,0,8.94,4.02,8.94,8.94l0,0 c0,4.92-4.02,8.94-8.94,8.94h-105C4.02,56.91,0,52.89,0,47.97l0,0C0,43.06,4.02,39.03,8.94,39.03L8.94,39.03z"
-        />
-      </svg>
+      <img src="~/assets/images/menu-white.svg" alt="" />
     </button>
     <prismic-image class="logo" :field="$store.state.header.logo" />
     <nav v-if="$store.state.header.navigation" aria-label="primary navigation" :class="{ open: showMenu }">
@@ -25,7 +16,7 @@
         </li>
       </ul>
     </nav>
-    <a class="header__phone-link" :href="`tel:${$store.state.header.phone_number}`">
+    <a class="header__phone-link header__button" :href="`tel:${$store.state.header.phone_number}`">
       <img src="~/assets/images/phone-white.svg" alt="" />
       <span>{{ $store.state.header.phone_number }}</span></a>
   </header>
@@ -138,13 +129,17 @@ a {
   font-weight: 600;
   white-space: nowrap;
 
-  img {
-    width: 1rem;
-    height: 1rem;
-  }
-
   span {
     margin-left: .5rem;
+  }
+}
+
+.header__button {
+  img {
+    width: 1.25rem;
+    height: 1.25rem;
+    object-fit: contain;
+    object-position: center;
   }
 }
 
@@ -201,12 +196,14 @@ a {
     padding: 1rem;
   }
 
-  .header__phone-link {
+  .header__button {
     img {
-      width: 1.25rem;
-      height: 1.25rem;
+      width: 1.5rem;
+      height: 1.5rem;
     }
+  }
 
+  .header__phone-link {
     span {
       display: none;
     }
