@@ -1,0 +1,28 @@
+{
+  "id": "privacy_policy",
+  "label": "Privacy Policy",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "title": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Title",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "single": "heading1"
+        }
+      },
+      "privacy_policy": {
+        "type": "StructuredText",
+        "config": {
+          "label": "Privacy Policy",
+          "placeholder": "",
+          "allowTargetBlank": true,
+          "multi": "paragraph,heading1,heading2,heading3,heading4,heading5,heading6,strong,em,hyperlink,list-item,o-list-item"
+        }
+      }
+    }
+  }
+}

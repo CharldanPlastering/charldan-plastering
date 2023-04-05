@@ -567,12 +567,47 @@ export interface HomepageDocumentDataSocialMediaLinksItem {
  * @typeParam Lang - Language API ID of the document.
  */
 export type HomepageDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<HomepageDocumentData>, "homepage", Lang>;
-export type AllDocumentTypes = FooterDocument | HeaderDocument | HomepageDocument;
+/** Content for Privacy Policy documents */
+interface PrivacyPolicyDocumentData {
+    /**
+     * Title field in *Privacy Policy*
+     *
+     * - **Field Type**: Title
+     * - **Placeholder**: *None*
+     * - **API ID Path**: privacy_policy.title
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    title: prismicT.TitleField;
+    /**
+     * Privacy Policy field in *Privacy Policy*
+     *
+     * - **Field Type**: Rich Text
+     * - **Placeholder**: *None*
+     * - **API ID Path**: privacy_policy.privacy_policy
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/rich-text-title
+     *
+     */
+    privacy_policy: prismicT.RichTextField;
+}
+/**
+ * Privacy Policy document from Prismic
+ *
+ * - **API ID**: `privacy_policy`
+ * - **Repeatable**: `false`
+ * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
+ *
+ * @typeParam Lang - Language API ID of the document.
+ */
+export type PrivacyPolicyDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<PrivacyPolicyDocumentData>, "privacy_policy", Lang>;
+export type AllDocumentTypes = FooterDocument | HeaderDocument | HomepageDocument | PrivacyPolicyDocument;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { FooterDocumentData, FooterDocument, HeaderDocumentData, HeaderDocumentDataNavigationItem, HeaderDocument, HomepageDocumentData, HomepageDocumentDataServicesItem, HomepageDocumentDataQualitiesItem, HomepageDocumentDataGalleryItem, HomepageDocumentDataTestimonialsItem, HomepageDocumentDataAddressItem, HomepageDocumentDataSocialMediaLinksItem, HomepageDocument, AllDocumentTypes };
+        export type { FooterDocumentData, FooterDocument, HeaderDocumentData, HeaderDocumentDataNavigationItem, HeaderDocument, HomepageDocumentData, HomepageDocumentDataServicesItem, HomepageDocumentDataQualitiesItem, HomepageDocumentDataGalleryItem, HomepageDocumentDataTestimonialsItem, HomepageDocumentDataAddressItem, HomepageDocumentDataSocialMediaLinksItem, HomepageDocument, PrivacyPolicyDocumentData, PrivacyPolicyDocument, AllDocumentTypes };
     }
 }

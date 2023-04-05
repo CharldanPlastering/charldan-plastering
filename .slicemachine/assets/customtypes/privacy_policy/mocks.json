@@ -1,0 +1,24 @@
+{
+  "title": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "heading1",
+        "content": {
+          "text": "Usual"
+        }
+      }
+    ]
+  },
+  "privacy_policy": {
+    "__TYPE__": "StructuredTextContent",
+    "value": [
+      {
+        "type": "paragraph",
+        "content": {
+          "text": "Sit aliquip laboris aliquip occaecat velit ullamco officia aute qui et laboris aliquip. Laborum officia voluptate anim in ullamco amet irure aliqua sint cillum ut elit. Culpa aute aute sunt ullamco reprehenderit nostrud enim ut laboris laboris pariatur et reprehenderit qui aliquip."
+        }
+      }
+    ]
+  }
+}
