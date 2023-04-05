@@ -63,3 +63,13 @@
 .heading.quality__heading {
   font-size: 1.5rem;
 }
+
+@media screen and (max-width: 768px) {
+  .section--about {
+    padding: 5rem 1rem;
+  }
+
+  .about__image {
+    min-width: 100%;
+  }
+}

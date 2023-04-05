@@ -35,3 +35,17 @@
     margin: 0;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .section--hero {
+    padding: 8rem 2rem;
+  }
+
+  .hero__title {
+    font-size: 2.5rem;
+  }
+
+  .hero__strapline {
+    font-size: 1.25rem;
+  }
+}
