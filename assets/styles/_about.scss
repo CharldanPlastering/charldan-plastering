@@ -14,6 +14,7 @@
   min-width: 35rem;
   object-fit: cover;
   z-index: -1;
+  max-height: 40rem;
 }
 
 .about__box {
@@ -71,5 +72,17 @@
 
   .about__image {
     min-width: 100%;
+  }
+
+  .quality {
+    padding: 1rem .75rem;
+
+    > * + * {
+      margin: .5rem 0 0 0;
+    }
+  }
+
+  .quality__icon {
+    height: 3rem;
   }
 }
