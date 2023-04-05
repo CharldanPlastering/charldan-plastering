@@ -16,14 +16,14 @@
       </div>
     </section>
 
-    <section class="section section--services">
+    <section id="services" class="section section--services">
       <div v-for="(service, i) in document.data.services" :key="`service-${i}`" class="service">
         <prismic-rich-text class="service__heading heading" :field="service.name"></prismic-rich-text>
         <prismic-rich-text class="service__description" :field="service.description"></prismic-rich-text>
       </div>
     </section>
 
-    <section class="section section--about">
+    <section id="about" class="section section--about">
       <prismic-image class="about__image" :field="document.data.about_image"></prismic-image>
       <div class="about__box box">
         <prismic-rich-text class="about__heading heading" :field="document.data.about_heading"></prismic-rich-text>
@@ -38,17 +38,17 @@
       </div>
     </section>
 
-    <section class="section section--gallery">
+    <section id="gallery" class="section section--gallery">
       <prismic-rich-text class="gallery__heading heading" :field="document.data.gallery_heading"></prismic-rich-text>
       <prismic-rich-text class="gallery__text section__description" :field="document.data.gallery_description"></prismic-rich-text>
     </section>
 
-    <section class="section section--testimonials">
+    <section id="testimonials" class="section section--testimonials">
       <prismic-rich-text class="testimonials__heading heading" :field="document.data.testimonials_heading"></prismic-rich-text>
       <prismic-rich-text class="testimonials__text section__description" :field="document.data.testimonials_description"></prismic-rich-text>
     </section>
 
-    <section class="section section--contact">
+    <section id="contact" class="section section--contact">
       <prismic-image class="contact__image" :field="document.data.contact_image"></prismic-image>
       <div class="contact__box box">
         <div>
