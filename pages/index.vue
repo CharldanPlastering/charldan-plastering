@@ -71,14 +71,16 @@
     </section>
 
     <section id="gallery" class="section section--gallery">
-      <prismic-rich-text
-        class="gallery__heading heading"
-        :field="document.data.gallery_heading"
-      ></prismic-rich-text>
-      <prismic-rich-text
-        class="gallery__text section__description"
-        :field="document.data.gallery_description"
-      ></prismic-rich-text>
+      <div class="gallery__text">
+        <prismic-rich-text
+          class="gallery__heading heading"
+          :field="document.data.gallery_heading"
+        ></prismic-rich-text>
+        <prismic-rich-text
+          class="section__description"
+          :field="document.data.gallery_description"
+        ></prismic-rich-text>
+      </div>
       <div class="gallery__slider">
         <button
           class="slider__button slider__button--left"
