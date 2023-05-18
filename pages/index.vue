@@ -80,11 +80,23 @@
         :field="document.data.gallery_description"
       ></prismic-rich-text>
       <div class="gallery__slider">
-        <button class="slider__button slider__button--left" @click="scrollGalleryLeft()">
-          <img src="~/assets/images/chevron-circle-right-accent.svg" alt="Scroll left">
+        <button
+          class="slider__button slider__button--left"
+          @click="scrollGalleryLeft()"
+        >
+          <img
+            src="~/assets/images/chevron-circle-right-accent.svg"
+            alt="Scroll left"
+          />
         </button>
-        <button class="slider__button slider__button--right" @click="scrollGalleryRight()">
-          <img src="~/assets/images/chevron-circle-right-accent.svg" alt="Scroll right">
+        <button
+          class="slider__button slider__button--right"
+          @click="scrollGalleryRight()"
+        >
+          <img
+            src="~/assets/images/chevron-circle-right-accent.svg"
+            alt="Scroll right"
+          />
         </button>
 
         <div ref="gallerySlider" class="slider__wrapper">
@@ -109,6 +121,38 @@
         class="testimonials__text section__description"
         :field="document.data.testimonials_description"
       ></prismic-rich-text>
+      <div class="testimonials__reviews">
+        <div
+          v-for="(item, i) in document.data.testimonials"
+          :key="`testimonial-${i}`"
+          class="review"
+        >
+          <div
+            role="img"
+            :alt="`${item.star_rating} stars`"
+            class="review__stars"
+          >
+            <template v-for="star in [1, 2, 3, 4, 5]">
+              <img
+                v-if="star <= item.star_rating"
+                :key="`t${i}-star${star}`"
+                src="~/assets/images/star-accent.svg"
+                alt=""
+              />
+            </template>
+          </div>
+          <prismic-rich-text class="review__comment" :field="item.comment" />
+          <p class="review__name">{{ item.customer_name }}</p>
+          <p class="review__info">{{ item.additional_info }}</p>
+        </div>
+        <a
+          href="http://www.ratedpeople.com/profile/charldan-plastering/#ratings"
+          target="_blank"
+          class="reviews__link"
+          ><img
+            src="https://rp-prod-wordpress-b-content.s3.amazonaws.com/assets/2018/06/19131548/badges_reviews-white.png"
+        /></a>
+      </div>
     </section>
 
     <section id="contact" class="section section--contact">
@@ -214,23 +258,23 @@ export default {
   },
   methods: {
     scrollGalleryRight() {
-      let pixelsToScroll = this.$refs.gallerySlider.clientWidth;
+      let pixelsToScroll = this.$refs.gallerySlider.clientWidth
 
       if (pixelsToScroll > 525) {
-        pixelsToScroll -= 128;
+        pixelsToScroll -= 128
       }
 
-      this.$refs.gallerySlider.scrollLeft += pixelsToScroll;
+      this.$refs.gallerySlider.scrollLeft += pixelsToScroll
     },
     scrollGalleryLeft() {
-      let pixelsToScroll = this.$refs.gallerySlider.clientWidth;
+      let pixelsToScroll = this.$refs.gallerySlider.clientWidth
 
       if (pixelsToScroll > 525) {
-        pixelsToScroll -= 128;
+        pixelsToScroll -= 128
       }
 
-      this.$refs.gallerySlider.scrollLeft -= pixelsToScroll;
-    }
+      this.$refs.gallerySlider.scrollLeft -= pixelsToScroll
+    },
   },
 }
 </script>
