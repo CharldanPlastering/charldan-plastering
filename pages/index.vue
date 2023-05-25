@@ -174,7 +174,7 @@
           ></prismic-rich-text>
         </div>
         <div class="contact__details">
-          <div class="contact__detail">
+          <div v-if="document.data.phone_number" class="contact__detail">
             <img
               class="detail__icon"
               src="~/assets/images/phone-accent.svg"
@@ -186,7 +186,7 @@
               >{{ document.data.phone_number }}</a
             >
           </div>
-          <div class="contact__detail">
+          <div v-if="document.data.email" class="contact__detail">
             <img
               class="detail__icon"
               src="~/assets/images/email-accent.svg"
@@ -196,7 +196,7 @@
               document.data.email
             }}</a>
           </div>
-          <div class="contact__detail">
+          <div v-if="document.data.address?.length" class="contact__detail">
             <img
               class="detail__icon"
               src="~/assets/images/location-accent.svg"
